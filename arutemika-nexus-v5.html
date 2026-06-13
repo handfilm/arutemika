@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arutemika — Japanese Genuine Leather Goods Exporter Since 1998</title>
+<meta name="description" content="Arutemika: Bangladesh-based genuine leather bags, footwear & accessories. Exporting to Japan since 1998. Real-time buyer portal. 日本のバイヤー様歓迎。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+Bengali:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0a07;--bg2:#141009;--panel:#1c140d;--line:#2e2318;
+  --gold:#c9a063;--gold-hi:#e8c07a;--gold-dim:#7a5e30;
+  --cream:#f0ebe0;--muted:#9a8e7e;--leather:#6b4423;
+  --disp:'Cormorant Garamond',serif;
+  --mono:'IBM Plex Mono',monospace;
+  --body:'Noto Sans JP','Noto Sans Bengali',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--body);-webkit-font-smoothing:antialiased;line-height:1.7}
+body[data-lang="bn"]{font-family:'Noto Sans Bengali','Noto Sans JP',sans-serif}
+body[data-lang="ja"]{font-family:'Noto Sans JP',sans-serif}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(34px,5vw,54px);line-height:1.1;margin-bottom:14px;letter-spacing:.01em}
+.lead{color:var(--muted);font-size:16px;max-width:580px;line-height:1.75}
+section{padding:100px 0;border-top:1px solid var(--line)}
+
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:90;background:rgba(13,10,7,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;height:66px;gap:32px}
+.logo-mark{font-family:var(--disp);font-size:22px;font-weight:600;letter-spacing:.04em;color:var(--cream)}
+.logo-mark span{color:var(--gold)}
+.logo-sub{font-family:var(--mono);font-size:10px;color:var(--gold-dim);letter-spacing:.18em;display:block;margin-top:-4px}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+.nav-links a{color:var(--muted);transition:color .15s}.nav-links a:hover{color:var(--gold)}
+.lang-bar{display:flex;border:1px solid var(--line);font-family:var(--mono)}
+.lang-bar button{background:none;border:none;border-right:1px solid var(--line);color:var(--muted);padding:7px 12px;cursor:pointer;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;transition:all .15s}
+.lang-bar button:last-child{border-right:none}
+.lang-bar button.active{background:var(--gold);color:#0d0a07;font-weight:600}
+.lang-bar button:not(.active):hover{color:var(--gold)}
+
+/* ── HERO SLIDER ── */
+.hero{padding:0;border-top:none;position:relative;overflow:hidden;height:100vh;min-height:580px}
+.slides{display:flex;height:100%;transition:transform .7s cubic-bezier(.77,0,.175,1)}
+.slide{min-width:100%;height:100%;position:relative;flex-shrink:0}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:center}
+.slide-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,10,7,.25) 0%,rgba(13,10,7,.55) 60%,rgba(13,10,7,.88) 100%)}
+.slide-content{position:absolute;bottom:0;left:0;right:0;padding:0 0 80px;text-align:center}
+.slide-content .wrap{}
+.hero h1{font-family:var(--disp);font-weight:600;font-size:clamp(48px,8vw,96px);line-height:.95;letter-spacing:.02em;margin:8px 0 18px;color:#fff}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-family:var(--mono);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hero-lead{font-size:16px;color:rgba(240,235,224,.8);margin-bottom:32px;max-width:580px;margin-left:auto;margin-right:auto}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:15px 32px;border:1px solid var(--gold);transition:all .18s}
+.btn-solid{background:var(--gold);color:#0d0a07;font-weight:600}.btn-solid:hover{background:var(--gold-hi)}
+.btn-ghost{color:var(--gold)}.btn-ghost:hover{background:rgba(201,160,99,.1)}
+.slide-nav{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:10px}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(201,160,99,.35);border:none;cursor:pointer;padding:0;transition:all .3s}
+.dot.active{background:var(--gold);width:24px;border-radius:3px}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(13,10,7,.5);border:1px solid var(--line);color:var(--gold);font-family:var(--mono);font-size:18px;padding:14px 18px;cursor:pointer;transition:all .15s;z-index:2}
+.arrow:hover{background:rgba(201,160,99,.15)}
+.arrow-prev{left:28px}.arrow-next{right:28px}
+
+/* ── STATS ── */
+.stats{padding:0;border-top:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}
+.stat{padding:36px 28px;border-right:1px solid var(--line)}
+.stat b{display:block;font-family:var(--disp);font-size:42px;font-weight:600;color:var(--gold);line-height:1}
+.stat span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:block;margin-top:6px}
+
+/* ── ABOUT / 会社概要 ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:52px}
+.spec{border:1px solid var(--gold-dim);font-family:var(--mono)}
+.spec-head{background:var(--leather);padding:14px 22px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--gold-dim)}
+.spec-head b{font-size:12.5px;letter-spacing:.18em;color:var(--gold-hi)}
+.spec-head span{font-size:10px;color:var(--gold);letter-spacing:.12em}
+.spec-row{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--line)}
+.spec-row:last-child{border-bottom:none}
+.spec-row dt{padding:13px 18px;font-size:11.5px;color:var(--gold);letter-spacing:.08em;background:rgba(201,160,99,.04);border-right:1px solid var(--line)}
+.spec-row dd{padding:13px 18px;font-size:13px;color:var(--cream)}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.tl-item:last-child{border-bottom:none}
+.tl-yr{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.12em;padding-top:3px}
+.tl-body h4{font-family:var(--disp);font-size:18px;font-weight:600;margin-bottom:4px}
+.tl-body p{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+/* ── PRODUCTS MASONRY ── */
+.masonry{columns:3;column-gap:14px;margin-top:48px}
+@media(max-width:860px){.masonry{columns:2}}
+@media(max-width:520px){.masonry{columns:1}}
+.mason-item{break-inside:avoid;margin-bottom:14px;cursor:pointer;position:relative;overflow:hidden;background:var(--panel)}
+.mason-item img{width:100%;display:block;transition:transform .4s ease}
+.mason-item:hover img{transform:scale(1.04)}
+.mason-cap{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(13,10,7,.85),transparent);font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--cream);opacity:0;transition:opacity .3s}
+.mason-item:hover .mason-cap{opacity:1}
+
+/* ── JAPAN DESK ── */
+.jp-desk{background:var(--leather);border:1px solid var(--gold-dim);padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
+.jp-desk h3{font-family:var(--disp);font-size:28px;font-weight:600;margin-bottom:14px}
+.jp-desk p{color:#d5c4ac;font-size:15px;margin-bottom:12px}
+.jp-pts{list-style:none;font-size:13.5px}
+.jp-pts li{padding:11px 0;border-bottom:1px solid rgba(201,160,99,.22);display:flex;gap:10px}
+.jp-pts li::before{content:"◆";color:var(--gold);flex-shrink:0;font-size:10px;margin-top:4px}
+
+/* ── BUYER PORTAL SECTION ── */
+#portal{position:relative}
+.portal-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,160,99,.12);border:1px solid var(--gold);padding:6px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--gold);margin-bottom:28px}
+.portal-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#7dc97a;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.portal-box{border:1px solid var(--gold-dim);box-shadow:0 0 40px rgba(201,160,99,.07);margin-top:32px;overflow:hidden}
+.portal-top{background:var(--leather);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gold-dim)}
+.portal-top-left h3{font-family:var(--disp);font-size:24px;font-weight:600}
+.portal-top-left p{font-size:13px;color:#d5c4ac;margin-top:4px}
+.portal-top-right{font-family:var(--mono);font-size:11px;color:var(--gold);text-align:right}
+.portal-features{display:grid;grid-template-columns:repeat(4,1fr);border-top:none}
+.pf{padding:24px 22px;border-right:1px solid var(--line);border-top:1px solid var(--line)}
+.pf:last-child{border-right:none}
+.pf-icon{font-size:22px;margin-bottom:10px}
+.pf h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--gold);margin-bottom:6px;text-transform:uppercase}
+.pf p{font-size:12.5px;color:var(--muted);line-height:1.55}
+.portal-gate{padding:36px 32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:var(--bg2);border-top:1px solid var(--line)}
+.portal-gate label{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:8px}
+.portal-gate input{background:var(--panel);border:1px solid var(--line);color:var(--gold);padding:13px 18px;font-family:var(--mono);font-size:15px;letter-spacing:.15em;text-transform:uppercase;width:240px;transition:border-color .15s}
+.portal-gate input:focus{outline:none;border-color:var(--gold)}
+.portal-gate input::placeholder{color:var(--gold-dim)}
+.portal-gate-btns{display:flex;gap:10px;align-items:flex-end}
+.pbtn{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;padding:13px 24px;border:1px solid var(--gold);background:var(--gold);color:#0d0a07;font-weight:600;cursor:pointer;transition:all .15s}
+.pbtn:hover{background:var(--gold-hi)}
+.pbtn-ghost{background:none;color:var(--gold)}.pbtn-ghost:hover{background:rgba(201,160,99,.1)}
+
+/* ── PORTAL OVERLAY DASHBOARD ── */
+#portalOverlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(7,5,3,.96);overflow-y:auto}
+#portalOverlay.open{display:block}
+.po-header{background:var(--leather);border-bottom:1px solid var(--gold-dim);padding:0 28px;display:flex;align-items:center;height:60px;gap:20px;position:sticky;top:0;z-index:10}
+.po-logo{font-family:var(--disp);font-size:17px;font-weight:600;color:var(--cream)}
+.po-logo span{color:var(--gold)}
+.po-buyer{font-family:var(--mono);font-size:11.5px;color:var(--gold);letter-spacing:.12em}
+.po-live{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:#7dc97a;letter-spacing:.12em;margin-left:auto}
+.po-live::before{content:'';width:6px;height:6px;border-radius:50%;background:#7dc97a;animation:blink 1.4s ease-in-out infinite}
+.po-close{background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:var(--mono);font-size:12px;padding:7px 16px;cursor:pointer;letter-spacing:.1em;margin-left:16px}
+.po-close:hover{background:rgba(201,160,99,.1)}
+.po-body{max-width:1100px;margin:0 auto;padding:32px 28px}
+.po-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:28px}
+.po-stat{background:var(--panel);padding:20px 22px}
+.po-stat b{display:block;font-family:var(--mono);font-size:22px;font-weight:600;color:var(--gold)}
+.po-stat span{font-size:11px;color:var(--muted);letter-spacing:.08em;font-family:var(--mono)}
+.po-order{border:1px solid var(--line);margin-bottom:28px}
+.po-order-head{background:var(--panel);padding:14px 20px;font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.12em;border-bottom:1px solid var(--line)}
+.stages{display:flex;padding:20px;gap:0;overflow-x:auto}
+.stage{flex:1;text-align:center;position:relative}
+.stage::after{content:'';position:absolute;top:14px;left:50%;width:100%;height:2px;background:var(--line);z-index:0}
+.stage:last-child::after{display:none}
+.stage-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);background:var(--bg);margin:0 auto 8px;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;font-size:11px}
+.stage.done .stage-dot{background:var(--gold);border-color:var(--gold);color:#0d0a07;font-weight:600}
+.stage.active .stage-dot{border-color:var(--gold);animation:ring 1.5s ease-in-out infinite}
+@keyframes ring{50%{box-shadow:0 0 0 6px rgba(201,160,99,.2)}}
+.stage-lbl{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.08em;line-height:1.4}
+.stage.done .stage-lbl,.stage.active .stage-lbl{color:var(--gold)}
+.po-tabs{display:flex;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;margin-bottom:24px}
+.po-tab{padding:12px 22px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;text-transform:uppercase;letter-spacing:.12em}
+.po-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.po-tab:hover:not(.active){color:var(--cream)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+.feed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.feed-card{background:var(--panel);border:1px solid var(--line);overflow:hidden}
+.feed-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.feed-meta{padding:10px 12px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.feed-meta b{color:var(--cream);display:block;margin-bottom:2px;font-size:11px}
+.qc-list{display:flex;flex-direction:column;gap:14px}
+.qc-item{background:var(--panel);border:1px solid var(--line);padding:16px 20px}
+.qc-item h4{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;text-transform:uppercase}
+.qc-bar-wrap{display:flex;align-items:center;gap:14px}
+.qc-bar{flex:1;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.qc-bar-fill{height:100%;background:var(--gold);border-radius:3px}
+.qc-pct{font-family:var(--mono);font-size:12px;color:var(--gold);width:36px;text-align:right}
+.doc-list{border:1px solid var(--line)}
+.doc-row{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12.5px}
+.doc-row:last-child{border-bottom:none}
+.doc-name{color:var(--cream)}.doc-date{color:var(--muted);font-size:11px}
+.doc-status{font-size:11px;padding:3px 10px;border-radius:3px}
+.doc-open{color:#7dc97a;border:1px solid rgba(125,201,122,.3)}
+.doc-lock{color:var(--gold-dim);border:1px solid var(--line);letter-spacing:.06em}
+
+/* ── RFQ ── */
+.rfq-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:52px;margin-top:48px}
+form.rfq{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{background:var(--bg2);border:1px solid var(--line);color:var(--cream);padding:12px 15px;font-family:var(--body);font-size:15px;transition:border-color .15s;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+select option{background:var(--bg)}
+textarea{min-height:110px;resize:vertical}
+.submit{grid-column:1/-1;background:var(--gold);border:none;color:#0d0a07;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:16px;cursor:pointer;transition:background .15s}
+.submit:hover{background:var(--gold-hi)}
+.submit:disabled{background:var(--gold-dim);cursor:wait}
+.form-status{grid-column:1/-1;font-family:var(--mono);font-size:12.5px;min-height:18px}
+.status-ok{color:#7dc97a}.status-err{color:#d97a6a}
+.contact-card{border:1px solid var(--line);padding:32px;font-family:var(--mono)}
+.contact-card h3{font-family:var(--disp);font-size:20px;font-weight:600;margin-bottom:20px}
+.crow{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:12.5px}
+.crow:last-child{border-bottom:none}
+.crow span:first-child{color:var(--muted)}
+
+/* ── LIGHTBOX ── */
+#lb{display:none;position:fixed;inset:0;background:rgba(5,3,2,.96);z-index:150;align-items:center;justify-content:center;padding:24px}
+#lb.open{display:flex}
+#lb img{max-width:92vw;max-height:88vh;object-fit:contain;border:1px solid var(--gold-dim)}
+#lb-close{position:absolute;top:20px;right:24px;background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:var(--mono);padding:8px 16px;cursor:pointer;font-size:13px}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--line);padding:44px 0;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.foot-logo{font-family:var(--disp);font-size:17px;font-weight:600;color:var(--cream)}
+.foot-logo span{color:var(--gold)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+.nav-links{display:none}
+.about-grid,.rfq-grid{grid-template-columns:1fr}
+.jp-desk{grid-template-columns:1fr;padding:32px 24px}
+.stats-grid{grid-template-columns:1fr 1fr}
+.portal-features{grid-template-columns:1fr 1fr}
+.po-stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+.stats-grid{grid-template-columns:1fr}
+.hero-ctas{flex-direction:column;align-items:center}
+.arrow{display:none}
+form.rfq{grid-template-columns:1fr}
+.portal-features{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body data-lang="en">
+
+<!-- HEADER -->
+<header>
+<div class="wrap nav">
+  <div>
+    <div class="logo-mark">Arute<span>mika</span></div>
+    <div class="logo-sub" data-i18n="logo_sub"></div>
+  </div>
+  <nav class="nav-links">
+    <a href="#about" data-i18n="nav_about"></a>
+    <a href="#products" data-i18n="nav_products"></a>
+    <a href="#japan" data-i18n="nav_japan"></a>
+    <a href="#portal" data-i18n="nav_portal"></a>
+    <a href="#rfq" data-i18n="nav_rfq"></a>
+  </nav>
+  <div class="lang-bar">
+    <button data-setlang="en">EN</button>
+    <button data-setlang="bn">বাং</button>
+    <button data-setlang="ja">日本語</button>
+  </div>
+</div>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero">
+  <div class="slides" id="slides">
+    <div class="slide">
+      <img src="slide1.png" alt="Arutemika Leather Sneakers">
+      <div class="slide-overlay"></div>
+      <div class="slide-content"><div class="wrap">
+        <div class="hero-sub" data-i18n="hero_eyebrow"></div>
+        <h1 data-i18n-html="s1_h1"></h1>
+        <p class="hero-lead" data-i18n="s1_lead"></p>
+        <div class="hero-ctas">
+          <a href="#rfq" class="btn btn-solid" data-i18n="cta_rfq"></a>
+          <a href="#portal" class="btn btn-ghost" data-i18n="cta_portal"></a>
+        </div>
+      </div></div>
+    </div>
+    <div class="slide">
+      <img src="slide2.png" alt="Arutemika Leather Bags">
+      <div class="slide-overlay"></div>
+      <div class="slide-content"><div class="wrap">
+        <div class="hero-sub" data-i18n="hero_eyebrow"></div>
+        <h1 data-i18n-html="s2_h1"></h1>
+        <p class="hero-lead" data-i18n="s2_lead"></p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn btn-solid" data-i18n="cta_products"></a>
+          <a href="#rfq" class="btn btn-ghost" data-i18n="cta_rfq"></a>
+        </div>
+      </div></div>
+    </div>
+    <div class="slide">
+      <img src="slide3.png" alt="Arutemika Collection">
+      <div class="slide-overlay"></div>
+      <div class="slide-content"><div class="wrap">
+        <div class="hero-sub" data-i18n="hero_eyebrow"></div>
+        <h1 data-i18n-html="s3_h1"></h1>
+        <p class="hero-lead" data-i18n="s3_lead"></p>
+        <div class="hero-ctas">
+          <a href="#about" class="btn btn-solid" data-i18n="cta_about"></a>
+          <a href="#japan" class="btn btn-ghost" data-i18n="cta_japan"></a>
+        </div>
+      </div></div>
+    </div>
+    <div class="slide">
+      <img src="slide4.png" alt="Arutemika Sneaker Technology">
+      <div class="slide-overlay"></div>
+      <div class="slide-content"><div class="wrap">
+        <div class="hero-sub" data-i18n="hero_eyebrow"></div>
+        <h1 data-i18n-html="s4_h1"></h1>
+        <p class="hero-lead" data-i18n="s4_lead"></p>
+        <div class="hero-ctas">
+          <a href="#rfq" class="btn btn-solid" data-i18n="cta_rfq"></a>
+          <a href="#portal" class="btn btn-ghost" data-i18n="cta_portal"></a>
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <button class="arrow arrow-prev" onclick="slide(-1)">‹</button>
+  <button class="arrow arrow-next" onclick="slide(1)">›</button>
+  <div class="slide-nav" id="dots"></div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat"><b>1998</b><span data-i18n="st1"></span></div>
+    <div class="stat"><b>28+</b><span data-i18n="st2"></span></div>
+    <div class="stat"><b>2</b><span data-i18n="st3"></span></div>
+    <div class="stat"><b>24h</b><span data-i18n="st4"></span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="wrap">
+  <div class="eyebrow" data-i18n="ab_eyebrow"></div>
+  <h2 data-i18n="ab_h2"></h2>
+  <p class="lead" data-i18n="ab_lead"></p>
+  <div class="about-grid">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-yr">1998</div>
+        <div class="tl-body"><h4 data-i18n="tl1_h"></h4><p data-i18n="tl1_p"></p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-yr">2007</div>
+        <div class="tl-body"><h4 data-i18n="tl2_h"></h4><p data-i18n="tl2_p"></p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-yr">2024</div>
+        <div class="tl-body"><h4 data-i18n="tl3_h"></h4><p data-i18n="tl3_p"></p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-yr">2026</div>
+        <div class="tl-body"><h4 data-i18n="tl4_h"></h4><p data-i18n="tl4_p"></p></div>
+      </div>
+    </div>
+    <dl class="spec">
+      <div class="spec-head"><b data-i18n="spec_title"></b><span>REG-01</span></div>
+      <div class="spec-row"><dt data-i18n="sk1"></dt><dd data-i18n="sv1"></dd></div>
+      <div class="spec-row"><dt data-i18n="sk2"></dt><dd data-i18n="sv2"></dd></div>
+      <div class="spec-row"><dt data-i18n="sk3"></dt><dd data-i18n="sv3"></dd></div>
+      <div class="spec-row"><dt data-i18n="sk4"></dt><dd data-i18n="sv4"></dd></div>
+      <div class="spec-row"><dt data-i18n="sk5"></dt><dd data-i18n="sv5"></dd></div>
+      <div class="spec-row"><dt data-i18n="sk6"></dt><dd data-i18n="sv6"></dd></div>
+      <div class="spec-row"><dt data-i18n="sk7"></dt><dd data-i18n="sv7"></dd></div>
+    </dl>
+  </div>
+</div>
+</section>
+
+<!-- PRODUCTS MASONRY -->
+<section id="products">
+<div class="wrap">
+  <div class="eyebrow" data-i18n="pr_eyebrow"></div>
+  <h2 data-i18n="pr_h2"></h2>
+  <p class="lead" data-i18n="pr_lead"></p>
+  <div class="masonry" id="masonry">
+    <div class="mason-item" onclick="openLB('p1.jpg')"><img src="p1.jpg" alt="Leather Handbag" loading="lazy"><div class="mason-cap" data-i18n="cap1"></div></div>
+    <div class="mason-item" onclick="openLB('p2.jpg')"><img src="p2.jpg" alt="Classic Tote" loading="lazy"><div class="mason-cap" data-i18n="cap2"></div></div>
+    <div class="mason-item" onclick="openLB('p3.jpg')"><img src="p3.jpg" alt="Croc Embossed Bag" loading="lazy"><div class="mason-cap" data-i18n="cap3"></div></div>
+    <div class="mason-item" onclick="openLB('p4.jpg')"><img src="p4.jpg" alt="Executive Briefcase" loading="lazy"><div class="mason-cap" data-i18n="cap4"></div></div>
+    <div class="mason-item" onclick="openLB('p5.jpg')"><img src="p5.jpg" alt="Camera Crossbody" loading="lazy"><div class="mason-cap" data-i18n="cap5"></div></div>
+    <div class="mason-item" onclick="openLB('p6.jpg')"><img src="p6.jpg" alt="Full Collection" loading="lazy"><div class="mason-cap" data-i18n="cap6"></div></div>
+    <div class="mason-item" onclick="openLB('p7.jpg')"><img src="p7.jpg" alt="Tote Series" loading="lazy"><div class="mason-cap" data-i18n="cap7"></div></div>
+    <div class="mason-item" onclick="openLB('p8.jpg')"><img src="p8.jpg" alt="Compact Backpack" loading="lazy"><div class="mason-cap" data-i18n="cap8"></div></div>
+    <div class="mason-item" onclick="openLB('p9.jpg')"><img src="p9.jpg" alt="Convertible Pack" loading="lazy"><div class="mason-cap" data-i18n="cap9"></div></div>
+    <div class="mason-item" onclick="openLB('p10.jpg')"><img src="p10.jpg" alt="Heritage Set" loading="lazy"><div class="mason-cap" data-i18n="cap10"></div></div>
+    <div class="mason-item" onclick="openLB('p11.jpg')"><img src="p11.jpg" alt="Urban Shopper" loading="lazy"><div class="mason-cap" data-i18n="cap11"></div></div>
+    <div class="mason-item" onclick="openLB('p12.png')"><img src="p12.png" alt="City Tote" loading="lazy"><div class="mason-cap" data-i18n="cap12"></div></div>
+    <div class="mason-item" onclick="openLB('p13.jpg')"><img src="p13.jpg" alt="Raw Leather" loading="lazy"><div class="mason-cap" data-i18n="cap13"></div></div>
+  </div>
+</div>
+</section>
+
+<!-- JAPAN DESK -->
+<section id="japan">
+<div class="wrap">
+  <div class="eyebrow" data-i18n="jp_eyebrow"></div>
+  <h2 data-i18n="jp_h2"></h2>
+  <div class="jp-desk">
+    <div>
+      <h3 data-i18n="jp_left_h"></h3>
+      <p data-i18n="jp_left_p1"></p>
+      <p data-i18n="jp_left_p2"></p>
+    </div>
+    <ul class="jp-pts">
+      <li data-i18n="jp_pt1"></li>
+      <li data-i18n="jp_pt2"></li>
+      <li data-i18n="jp_pt3"></li>
+      <li data-i18n="jp_pt4"></li>
+      <li data-i18n="jp_pt5"></li>
+      <li data-i18n="jp_pt6"></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- BUYER PORTAL -->
+<section id="portal">
+<div class="wrap">
+  <div class="eyebrow" data-i18n="po_eyebrow"></div>
+  <h2 data-i18n="po_h2"></h2>
+  <p class="lead" data-i18n="po_lead"></p>
+
+  <div class="portal-box">
+    <div class="portal-top">
+      <div class="portal-top-left">
+        <div class="portal-badge" data-i18n="po_badge"></div>
+        <h3 data-i18n="po_box_h"></h3>
+        <p data-i18n="po_box_p"></p>
+      </div>
+      <div class="portal-top-right">
+        NEXUS PORTAL v2.0<br>
+        <span style="color:var(--muted)" data-i18n="po_powered"></span>
+      </div>
+    </div>
+    <div class="portal-features">
+      <div class="pf"><div class="pf-icon">📸</div><h4 data-i18n="pf1_h"></h4><p data-i18n="pf1_p"></p></div>
+      <div class="pf"><div class="pf-icon">🎥</div><h4 data-i18n="pf2_h"></h4><p data-i18n="pf2_p"></p></div>
+      <div class="pf"><div class="pf-icon">✅</div><h4 data-i18n="pf3_h"></h4><p data-i18n="pf3_p"></p></div>
+      <div class="pf"><div class="pf-icon">📄</div><h4 data-i18n="pf4_h"></h4><p data-i18n="pf4_p"></p></div>
+    </div>
+    <div class="portal-gate">
+      <div>
+        <label data-i18n="po_label"></label>
+        <input id="buyerCode" placeholder="e.g. TANAKA-7X2" autocomplete="off">
+      </div>
+      <div class="portal-gate-btns">
+        <button class="pbtn" onclick="openPortal()" data-i18n="po_enter"></button>
+        <button class="pbtn pbtn-ghost" onclick="openPortal('demo')" data-i18n="po_demo"></button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PORTAL OVERLAY DASHBOARD -->
+<div id="portalOverlay">
+  <div class="po-header">
+    <div class="po-logo">Arute<span>mika</span></div>
+    <div class="po-buyer" id="poTitle"></div>
+    <div class="po-live" data-i18n="po_live"></div>
+    <button class="po-close" onclick="closePortal()" data-i18n="po_close"></button>
+  </div>
+  <div class="po-body">
+    <div class="po-stats">
+      <div class="po-stat"><b>ORD-2026-047</b><span data-i18n="pod_order"></span></div>
+      <div class="po-stat"><b>320 <span style="font-size:14px">pcs</span></b><span data-i18n="pod_qty"></span></div>
+      <div class="po-stat"><b id="poDate">—</b><span data-i18n="pod_eta"></span></div>
+      <div class="po-stat"><b style="color:#7dc97a">ON TRACK</b><span data-i18n="pod_status"></span></div>
+    </div>
+
+    <div class="po-order">
+      <div class="po-order-head" data-i18n="pod_stage_title"></div>
+      <div class="stages">
+        <div class="stage done"><div class="stage-dot">✓</div><div class="stage-lbl" data-i18n="stg1"></div></div>
+        <div class="stage done"><div class="stage-dot">✓</div><div class="stage-lbl" data-i18n="stg2"></div></div>
+        <div class="stage done"><div class="stage-dot">✓</div><div class="stage-lbl" data-i18n="stg3"></div></div>
+        <div class="stage active"><div class="stage-dot" style="font-size:8px">●</div><div class="stage-lbl" data-i18n="stg4"></div></div>
+        <div class="stage"><div class="stage-dot"></div><div class="stage-lbl" data-i18n="stg5"></div></div>
+      </div>
+    </div>
+
+    <div class="po-tabs">
+      <div class="po-tab active" onclick="switchTab('photos',this)" data-i18n="ptab1"></div>
+      <div class="po-tab" onclick="switchTab('qc',this)" data-i18n="ptab2"></div>
+      <div class="po-tab" onclick="switchTab('docs',this)" data-i18n="ptab3"></div>
+    </div>
+
+    <div class="tab-panel active" id="tab-photos">
+      <div class="feed-grid">
+        <div class="feed-card"><img src="p6.jpg" alt="Production"><div class="feed-meta"><b data-i18n="pf_cutting"></b><span data-i18n="pf_2h"></span></div></div>
+        <div class="feed-card"><img src="p13.jpg" alt="Raw Material"><div class="feed-meta"><b data-i18n="pf_material"></b><span data-i18n="pf_5h"></span></div></div>
+        <div class="feed-card"><img src="p10.jpg" alt="Assembly"><div class="feed-meta"><b data-i18n="pf_assembly"></b><span data-i18n="pf_1d"></span></div></div>
+        <div class="feed-card"><img src="p2.jpg" alt="Stitching"><div class="feed-meta"><b data-i18n="pf_stitch"></b><span data-i18n="pf_1d"></span></div></div>
+        <div class="feed-card"><img src="p7.jpg" alt="Color Check"><div class="feed-meta"><b data-i18n="pf_color"></b><span data-i18n="pf_2d"></span></div></div>
+        <div class="feed-card"><img src="p1.jpg" alt="Final Inspection"><div class="feed-meta"><b data-i18n="pf_final"></b><span data-i18n="pf_3d"></span></div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-qc">
+      <div class="qc-list">
+        <div class="qc-item"><h4 data-i18n="qc1_h"></h4><div class="qc-bar-wrap"><div class="qc-bar"><div class="qc-bar-fill" style="width:100%"></div></div><span class="qc-pct">100%</span></div></div>
+        <div class="qc-item"><h4 data-i18n="qc2_h"></h4><div class="qc-bar-wrap"><div class="qc-bar"><div class="qc-bar-fill" style="width:100%"></div></div><span class="qc-pct">100%</span></div></div>
+        <div class="qc-item"><h4 data-i18n="qc3_h"></h4><div class="qc-bar-wrap"><div class="qc-bar"><div class="qc-bar-fill" style="width:78%"></div></div><span class="qc-pct">78%</span></div></div>
+        <div class="qc-item"><h4 data-i18n="qc4_h"></h4><div class="qc-bar-wrap"><div class="qc-bar"><div class="qc-bar-fill" style="width:0%"></div></div><span class="qc-pct">—</span></div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-docs">
+      <div class="doc-list">
+        <div class="doc-row"><div><div class="doc-name" data-i18n="doc1"></div><div class="doc-date">2026-06-01</div></div><span class="doc-status doc-open" data-i18n="doc_open"></span></div>
+        <div class="doc-row"><div><div class="doc-name" data-i18n="doc2"></div><div class="doc-date">2026-06-03</div></div><span class="doc-status doc-open" data-i18n="doc_open"></span></div>
+        <div class="doc-row"><div><div class="doc-name" data-i18n="doc3"></div><div class="doc-date">2026-06-10</div></div><span class="doc-status doc-open" data-i18n="doc_open"></span></div>
+        <div class="doc-row"><div><div class="doc-name" data-i18n="doc4"></div><div class="doc-date">—</div></div><span class="doc-status doc-lock" data-i18n="doc_req"></span></div>
+        <div class="doc-row"><div><div class="doc-name" data-i18n="doc5"></div><div class="doc-date">—</div></div><span class="doc-status doc-lock" data-i18n="doc_req"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RFQ -->
+<section id="rfq">
+<div class="wrap">
+  <div class="eyebrow" data-i18n="rf_eyebrow"></div>
+  <h2 data-i18n="rf_h2"></h2>
+  <p class="lead" data-i18n="rf_lead"></p>
+  <div class="rfq-grid">
+    <form class="rfq" id="rfqForm" novalidate>
+      <div class="field"><label data-i18n="f_name"></label><input name="name" required></div>
+      <div class="field"><label data-i18n="f_company"></label><input name="company"></div>
+      <div class="field"><label data-i18n="f_email"></label><input name="email" type="email" required></div>
+      <div class="field"><label data-i18n="f_country"></label><input name="country"></div>
+      <div class="field">
+        <label data-i18n="f_cat"></label>
+        <select name="category">
+          <option value="leather_bags" data-i18n="opt1"></option>
+          <option value="leather_sneakers" data-i18n="opt2"></option>
+          <option value="leather_footwear" data-i18n="opt3"></option>
+          <option value="accessories" data-i18n="opt4"></option>
+          <option value="oem" data-i18n="opt5"></option>
+        </select>
+      </div>
+      <div class="field"><label data-i18n="f_qty"></label><input name="quantity" type="number" min="1"></div>
+      <div class="field full"><label data-i18n="f_notes"></label><textarea name="notes"></textarea></div>
+      <input type="text" name="website" style="position:absolute;left:-9999px;opacity:0" tabindex="-1">
+      <button class="submit" type="submit" data-i18n="f_submit"></button>
+      <div class="form-status" id="formStatus" role="status"></div>
+    </form>
+    <div class="contact-card">
+      <h3 data-i18n="cc_h"></h3>
+      <div class="crow"><span data-i18n="cc_co"></span><span>Arutemika</span></div>
+      <div class="crow"><span data-i18n="cc_est"></span><span>1998</span></div>
+      <div class="crow"><span data-i18n="cc_loc"></span><span>Dhaka, Bangladesh</span></div>
+      <div class="crow"><span data-i18n="cc_type"></span><span data-i18n="cc_type_v"></span></div>
+      <div class="crow"><span data-i18n="cc_moq"></span><span>50 pcs / style</span></div>
+      <div class="crow"><span data-i18n="cc_pay"></span><span>T/T · L/C · DP</span></div>
+      <div class="crow"><span data-i18n="cc_email"></span><span>buyers@arutemika.com</span></div>
+      <div class="crow"><span data-i18n="cc_resp"></span><span data-i18n="cc_resp_v"></span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer><div class="wrap foot-grid">
+  <div class="foot-logo">Arute<span>mika</span></div>
+  <div data-i18n="ft_tag"></div>
+  <div>23.8103°N · 90.4125°E · DHAKA</div>
+  <div>© 2026 ARUTEMIKA</div>
+</div></footer>
+
+<!-- LIGHTBOX -->
+<div id="lb"><button id="lb-close" onclick="closeLB()">CLOSE ✕</button><img id="lb-img" src="" alt=""></div>
+
+<!-- JS -->
+<script>
+'use strict';
+const ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEBAPP_URL_HERE';
+
+const I18N = {
+en:{
+  logo_sub:'Japanese Genuine Leather Goods Exporter Since 1998',
+  nav_about:'Company',nav_products:'Products',nav_japan:'Japan Desk',nav_portal:'Buyer Portal',nav_rfq:'Quote',
+  hero_eyebrow:'Arutemika · Est. 1998 · Dhaka, Bangladesh',
+  s1_h1:'Leather<br><em>Sneakers</em>',s1_lead:'Premium genuine leather sneakers crafted in Dhaka. Exporting to Japan since 1998. Advanced 3D insole technology, hand-stitched details.',
+  s2_h1:'Genuine<br><em>Leather Bags</em>',s2_lead:'Full-grain leather totes, shoulder bags and accessories — direct from our Dhaka factory. MOQ from 50 pieces.',
+  s3_h1:'28 Years<br><em>Japan Export</em>',s3_lead:'A family legacy in Japanese leather goods export. Two established buyers, real-time production portal, no black box.',
+  s4_h1:'匠の技<br><em>Craftsmanship</em>',s4_lead:'Hand-stitched details, antibacterial insoles, super-flexible outsoles. Built for the Japanese quality standard.',
+  cta_rfq:'Request Quotation',cta_portal:'Buyer Portal',cta_products:'View Products',cta_about:'Company Profile',cta_japan:'Japan Desk',
+  st1:'Established',st2:'Years Japan Export',st3:'Active JP Buyers',st4:'RFQ Response',
+  ab_eyebrow:'Company Profile',ab_h2:'A Japan story since 1998',
+  ab_lead:'Arutemika was built on a single conviction: that Bangladeshi craftsmanship meets Japanese quality standards. 28 years of consistent export to Japan proves it.',
+  tl1_h:'Founded — Japan Focus',tl1_p:'Established as a genuine leather goods exporter with Japan as the primary market from day one.',
+  tl2_h:'JETRO Program',tl2_p:'Participation in JETRO trade programs and Japanese leather fairs, deepening market knowledge and buyer relationships.',
+  tl3_h:'Expanded Product Lines',tl3_p:'Leather sneakers added alongside bags — Japan-spec construction, 3D insoles, antibacterial lining.',
+  tl4_h:'Nexus Portal Launch',tl4_p:'Real-time production transparency portal for buyers — photos, videos, QC reports, live from the factory floor.',
+  spec_title:'会社概要 / COMPANY REGISTER',
+  sk1:'Trade Name',sv1:'Arutemika',sk2:'Established',sv2:'1998 — Japanese Genuine Leather Goods',
+  sk3:'Location',sv3:'Dhaka, Bangladesh — Leather & Footwear Production',
+  sk4:'Products',sv4:'Genuine leather bags · Leather sneakers · Footwear · Accessories · OEM',
+  sk5:'Japan Export',sv5:'Active since 1998 · 2 established Japanese buyers · References available',
+  sk6:'Transparency',sv6:'Real-time buyer portal — production photos, QC reports, documents',
+  sk7:'Payment',sv7:'T/T · L/C · DP — flexible for first orders',
+  pr_eyebrow:'Product Lines',pr_h2:'Genuine leather. Every piece.',
+  pr_lead:'Bags, sneakers, accessories — all genuine leather, all made in our Dhaka production units, all with Japan-standard quality control.',
+  cap1:'Women\'s Leather Handbag',cap2:'Classic Leather Tote',cap3:'Croc-Embossed Shoulder Bag',cap4:'Executive Briefcase',cap5:'Leather Camera Crossbody',
+  cap6:'Full Collection',cap7:'Tote Series',cap8:'Compact Backpack',cap9:'Convertible Pack',cap10:'Heritage Leather Set',
+  cap11:'Urban Shopper',cap12:'Mustard City Tote',cap13:'Raw Leather Craftsmanship',
+  jp_eyebrow:'04 / 日本のバイヤー様へ',jp_h2:'Japan Desk',
+  jp_left_h:'Direct to factory, in Japanese',
+  jp_left_p1:'Our Japan desk has served Japanese buyers continuously since 1998. We understand Japanese quality expectations, packaging conventions, and the value of long-term relationships.',
+  jp_left_p2:'Japanese-language correspondence is welcome. All production is transparently visible in our buyer portal — photos and QC reports direct from the factory floor.',
+  jp_pt1:'日本語対応可 — Japanese correspondence available',
+  jp_pt2:'Active Japanese buyers since 1998 — references on request',
+  jp_pt3:'Small first orders welcome — grow at your pace',
+  jp_pt4:'Real-time production portal — photos, video, QC live',
+  jp_pt5:'JETRO program participant since 2007',
+  jp_pt6:'Japan-spec quality: hand-stitched, antibacterial, precision-finished',
+  po_eyebrow:'Buyer Portal',po_h2:'Live Production Portal',
+  po_lead:'Every order is fully visible. Hiron uploads production photos from the factory floor — buyers in Tokyo watch in real time.',
+  po_badge:'● LIVE PORTAL — バイヤー専用',po_box_h:'Your production line, live.',
+  po_box_p:'Enter your buyer code to access real-time photos, QC reports and shipping documents for your order.',
+  po_powered:'Powered by Nexus Drive Sync',
+  pf1_h:'Production Photos',pf1_p:'Factory floor images uploaded daily as your order progresses.',
+  pf2_h:'Live Video',pf2_p:'Short production clips — stitching, cutting, finishing — direct from Hiron.',
+  pf3_h:'QC Reports',pf3_p:'Inline and final inspection results with pass/fail per specification.',
+  pf4_h:'Documents',pf4_p:'Invoice, packing list, and export docs — available as order completes.',
+  po_label:'Buyer Code',po_enter:'Access Portal',po_demo:'▶ View Demo',
+  po_live:'LIVE FEED',po_close:'Close ✕',
+  pod_order:'Order ID',pod_qty:'Quantity',pod_eta:'Est. Ship Date',pod_status:'Production Status',
+  pod_stage_title:'PRODUCTION STAGES',
+  stg1:'RFQ\nConfirmed',stg2:'Sample\nApproved',stg3:'Bulk\nStarted',stg4:'QC\nIn Progress',stg5:'Ready\nto Ship',
+  ptab1:'Production Photos',ptab2:'QC Report',ptab3:'Documents',
+  pf_cutting:'Cutting — Leather Panels',pf_2h:'2 hours ago',pf_material:'Raw Leather Inspection',pf_5h:'5 hours ago',
+  pf_assembly:'Assembly Line',pf_1d:'1 day ago',pf_stitch:'Edge Stitching',pf_color:'Color & Texture Check',
+  pf_2d:'2 days ago',pf_final:'Sample Final Check',pf_3d:'3 days ago',
+  qc1_h:'Material & Leather Quality',qc2_h:'Cutting Accuracy',qc3_h:'Stitching & Finishing',qc4_h:'Final Inspection',
+  doc1:'Purchase Order — ORD-2026-047',doc2:'Production Schedule',doc3:'Sample Approval Form',
+  doc4:'Commercial Invoice',doc5:'Packing List & B/L',doc_open:'OPEN →',doc_req:'ON REQUEST',
+  rf_eyebrow:'Request for Quotation',rf_h2:'Get a quote',
+  rf_lead:'Confidential. Free samples for qualified buyers. Reply within 24 hours.',
+  f_name:'Full Name *',f_company:'Company',f_email:'Email *',f_country:'Country',
+  f_cat:'Product Category *',f_qty:'Quantity',f_notes:'Requirements / Notes',
+  opt1:'Genuine Leather Bags',opt2:'Leather Sneakers',opt3:'Leather Footwear',opt4:'Accessories & Wallets',opt5:'OEM / Private Label',
+  f_submit:'Send Quotation Request',
+  msg_sending:'Sending…',msg_ok:'Received. We\'ll reply within 24 hours.',msg_err:'Failed — email buyers@arutemika.com directly.',msg_inv:'Name and valid email required.',
+  cc_h:'Factory Details',cc_co:'Company',cc_est:'Established',cc_loc:'Location',cc_type:'Category',cc_type_v:'Leather Goods + Footwear',
+  cc_moq:'Minimum Order',cc_pay:'Payment',cc_email:'Email',cc_resp:'Response',cc_resp_v:'Within 24 hours',
+  ft_tag:'Japanese Genuine Leather Goods Exporter · Est. 1998'
+},
+bn:{
+  logo_sub:'১৯৯৮ সাল থেকে জাপানে জেনুইন লেদার পণ্য রপ্তানিকারক',
+  nav_about:'কোম্পানি',nav_products:'পণ্য',nav_japan:'জাপান ডেস্ক',nav_portal:'বায়ার পোর্টাল',nav_rfq:'কোটেশন',
+  hero_eyebrow:'আরুতেমিকা · প্রতিষ্ঠা ১৯৯৮ · ঢাকা, বাংলাদেশ',
+  s1_h1:'লেদার<br><em>স্নিকার</em>',s1_lead:'ঢাকায় তৈরি প্রিমিয়াম জেনুইন লেদার স্নিকার। ১৯৯৮ সাল থেকে জাপানে রপ্তানি। উন্নত ৩D ইনসোল, হাতে সেলাইকৃত বিবরণ।',
+  s2_h1:'জেনুইন<br><em>লেদার ব্যাগ</em>',s2_lead:'ফুল-গ্রেইন লেদার টোট, শোল্ডার ব্যাগ ও আনুষঙ্গিক — সরাসরি আমাদের ঢাকা কারখানা থেকে। MOQ মাত্র ৫০ পিস থেকে।',
+  s3_h1:'২৮ বছর<br><em>জাপান রপ্তানি</em>',s3_lead:'জাপানি লেদার পণ্য রপ্তানিতে পারিবারিক ঐতিহ্য। দুজন সক্রিয় বায়ার, রিয়েল-টাইম প্রোডাকশন পোর্টাল, সম্পূর্ণ স্বচ্ছ।',
+  s4_h1:'匠の技<br><em>কারিগরি দক্ষতা</em>',s4_lead:'হাতে সেলাইকৃত বিবরণ, অ্যান্টিব্যাকটেরিয়াল ইনসোল, সুপার-ফ্লেক্সিবল আউটসোল। জাপানের মান অনুযায়ী তৈরি।',
+  cta_rfq:'কোটেশন নিন',cta_portal:'বায়ার পোর্টাল',cta_products:'পণ্য দেখুন',cta_about:'কোম্পানি প্রোফাইল',cta_japan:'জাপান ডেস্ক',
+  st1:'প্রতিষ্ঠা',st2:'বছরের জাপান রপ্তানি',st3:'সক্রিয় জাপানি বায়ার',st4:'RFQ উত্তর',
+  ab_eyebrow:'কোম্পানি প্রোফাইল',ab_h2:'১৯৯৮ সাল থেকে জাপান-যাত্রা',
+  ab_lead:'আরুতেমিকা একটি বিশ্বাসে গড়া: বাংলাদেশি কারিগরি জাপানের মান পূরণ করে। ২৮ বছরের ধারাবাহিক জাপান রপ্তানি সেটাই প্রমাণ করে।',
+  tl1_h:'প্রতিষ্ঠা — জাপান ফোকাস',tl1_p:'জাপানকে প্রধান বাজার রেখে জেনুইন লেদার পণ্য রপ্তানিকারক হিসেবে প্রতিষ্ঠা।',
+  tl2_h:'JETRO প্রোগ্রাম',tl2_p:'JETRO ট্রেড প্রোগ্রাম ও জাপানি লেদার ফেয়ারে অংশগ্রহণ — বাজার-জ্ঞান ও বায়ার সম্পর্ক গভীর।',
+  tl3_h:'পণ্য লাইন বিস্তার',tl3_p:'লেদার স্নিকার যোগ — জাপান-স্পেক নির্মাণ, ৩D ইনসোল, অ্যান্টিব্যাকটেরিয়াল লাইনিং।',
+  tl4_h:'Nexus পোর্টাল চালু',tl4_p:'বায়ারদের জন্য রিয়েল-টাইম প্রোডাকশন স্বচ্ছতা পোর্টাল — ছবি, ভিডিও, QC রিপোর্ট সরাসরি কারখানা থেকে।',
+  spec_title:'会社概要 / কোম্পানি রেজিস্টার',
+  sk1:'ট্রেড নাম',sv1:'আরুতেমিকা (Arutemika)',sk2:'প্রতিষ্ঠা',sv2:'১৯৯৮ — জেনুইন লেদার পণ্য',
+  sk3:'অবস্থান',sv3:'ঢাকা, বাংলাদেশ — লেদার ও ফুটওয়্যার উৎপাদন',
+  sk4:'পণ্য',sv4:'জেনুইন লেদার ব্যাগ · লেদার স্নিকার · ফুটওয়্যার · আনুষঙ্গিক · OEM',
+  sk5:'জাপান রপ্তানি',sv5:'১৯৯৮ থেকে সক্রিয় · ২ জন প্রতিষ্ঠিত জাপানি বায়ার · রেফারেন্স পাওয়া যাবে',
+  sk6:'স্বচ্ছতা',sv6:'রিয়েল-টাইম বায়ার পোর্টাল — প্রোডাকশন ছবি, QC রিপোর্ট, ডকুমেন্ট',
+  sk7:'পেমেন্ট',sv7:'T/T · L/C · DP — প্রথম অর্ডারে নমনীয়',
+  pr_eyebrow:'পণ্য লাইন',pr_h2:'জেনুইন লেদার। প্রতিটি পিস।',
+  pr_lead:'ব্যাগ, স্নিকার, আনুষঙ্গিক — সব জেনুইন লেদার, সব ঢাকার কারখানায় তৈরি, সব জাপান-স্ট্যান্ডার্ড QC সহ।',
+  cap1:'মহিলাদের লেদার হ্যান্ডব্যাগ',cap2:'ক্লাসিক লেদার টোট',cap3:'ক্রোক-এমবসড শোল্ডার ব্যাগ',cap4:'এক্সিকিউটিভ ব্রিফকেস',cap5:'লেদার ক্যামেরা ক্রসবডি',
+  cap6:'সম্পূর্ণ সংগ্রহ',cap7:'টোট সিরিজ',cap8:'কমপ্যাক্ট ব্যাকপ্যাক',cap9:'কনভার্টিবল প্যাক',cap10:'হেরিটেজ লেদার সেট',
+  cap11:'আরবান শপার',cap12:'মাস্টার্ড সিটি টোট',cap13:'কাঁচা লেদার কারিগরি',
+  jp_eyebrow:'০৪ / জাপানি বায়ারদের জন্য',jp_h2:'জাপান ডেস্ক',
+  jp_left_h:'কারখানার সাথে সরাসরি, জাপানিজে',
+  jp_left_p1:'আমাদের জাপান ডেস্ক ১৯৯৮ সাল থেকে জাপানি বায়ারদের সেবা দিয়ে আসছে। জাপানি মান-প্রত্যাশা, প্যাকেজিং কনভেনশন এবং দীর্ঘমেয়াদি সম্পর্কের মূল্য আমরা বুঝি।',
+  jp_left_p2:'জাপানি ভাষায় যোগাযোগ স্বাগত। সব প্রোডাকশন আমাদের বায়ার পোর্টালে সম্পূর্ণ দৃশ্যমান।',
+  jp_pt1:'日本語対応可 — জাপানি ভাষায় যোগাযোগ',
+  jp_pt2:'১৯৯৮ থেকে সক্রিয় জাপানি বায়ার — রেফারেন্স পাওয়া যাবে',
+  jp_pt3:'ছোট প্রথম অর্ডার স্বাগত — নিজের গতিতে বাড়ুন',
+  jp_pt4:'রিয়েল-টাইম প্রোডাকশন পোর্টাল — ছবি, ভিডিও, QC লাইভ',
+  jp_pt5:'২০০৭ সাল থেকে JETRO প্রোগ্রামে অংশগ্রহণ',
+  jp_pt6:'জাপান-স্পেক মান: হাতে সেলাই, অ্যান্টিব্যাকটেরিয়াল, নির্ভুল ফিনিশিং',
+  po_eyebrow:'বায়ার পোর্টাল',po_h2:'লাইভ প্রোডাকশন পোর্টাল',
+  po_lead:'প্রতিটি অর্ডার সম্পূর্ণ দৃশ্যমান। হিরন কারখানা থেকে প্রোডাকশন ছবি আপলোড করেন — টোকিওতে বায়ার রিয়েল-টাইমে দেখেন।',
+  po_badge:'● লাইভ পোর্টাল — বায়ার এক্সক্লুসিভ',po_box_h:'আপনার প্রোডাকশন লাইন, লাইভ।',
+  po_box_p:'আপনার বায়ার কোড দিয়ে রিয়েল-টাইম ছবি, QC রিপোর্ট ও শিপিং ডকুমেন্ট দেখুন।',
+  po_powered:'Nexus Drive Sync দ্বারা পরিচালিত',
+  pf1_h:'প্রোডাকশন ছবি',pf1_p:'আপনার অর্ডার এগোনোর সাথে সাথে প্রতিদিন ছবি আপলোড।',
+  pf2_h:'লাইভ ভিডিও',pf2_p:'সেলাই, কাটিং, ফিনিশিং-এর ছোট ক্লিপ — সরাসরি হিরনের কাছ থেকে।',
+  pf3_h:'QC রিপোর্ট',pf3_p:'ইনলাইন ও ফাইনাল ইন্সপেকশন ফলাফল, স্পেসিফিকেশন অনুযায়ী।',
+  pf4_h:'ডকুমেন্ট',pf4_p:'ইনভয়েস, প্যাকিং লিস্ট ও এক্সপোর্ট ডকুমেন্ট — অর্ডার সম্পন্ন হলে।',
+  po_label:'বায়ার কোড',po_enter:'পোর্টালে প্রবেশ',po_demo:'▶ ডেমো দেখুন',
+  po_live:'লাইভ ফিড',po_close:'বন্ধ ✕',
+  pod_order:'অর্ডার আইডি',pod_qty:'পরিমাণ',pod_eta:'আনুমানিক শিপ তারিখ',pod_status:'প্রোডাকশন স্ট্যাটাস',
+  pod_stage_title:'প্রোডাকশন পর্যায়',
+  stg1:'RFQ\nনিশ্চিত',stg2:'স্যাম্পল\nঅনুমোদিত',stg3:'বাল্ক\nশুরু',stg4:'QC\nচলছে',stg5:'শিপের\nজন্য প্রস্তুত',
+  ptab1:'প্রোডাকশন ছবি',ptab2:'QC রিপোর্ট',ptab3:'ডকুমেন্ট',
+  pf_cutting:'কাটিং — লেদার প্যানেল',pf_2h:'২ ঘণ্টা আগে',pf_material:'কাঁচা লেদার ইন্সপেকশন',pf_5h:'৫ ঘণ্টা আগে',
+  pf_assembly:'অ্যাসেম্বলি লাইন',pf_1d:'১ দিন আগে',pf_stitch:'এজ স্টিচিং',pf_color:'রং ও টেক্সচার চেক',
+  pf_2d:'২ দিন আগে',pf_final:'ফাইনাল স্যাম্পল চেক',pf_3d:'৩ দিন আগে',
+  qc1_h:'ম্যাটেরিয়াল ও লেদার মান',qc2_h:'কাটিং নির্ভুলতা',qc3_h:'স্টিচিং ও ফিনিশিং',qc4_h:'ফাইনাল ইন্সপেকশন',
+  doc1:'ক্রয় আদেশ — ORD-2026-047',doc2:'প্রোডাকশন শিডিউল',doc3:'স্যাম্পল অনুমোদন ফর্ম',
+  doc4:'কমার্শিয়াল ইনভয়েস',doc5:'প্যাকিং লিস্ট ও B/L',doc_open:'খুলুন →',doc_req:'অনুরোধে',
+  rf_eyebrow:'কোটেশনের অনুরোধ',rf_h2:'কোটেশন নিন',
+  rf_lead:'সম্পূর্ণ গোপনীয়। যোগ্য বায়ারদের জন্য ফ্রি স্যাম্পল। ২৪ ঘণ্টায় উত্তর।',
+  f_name:'পুরো নাম *',f_company:'কোম্পানি',f_email:'ইমেইল *',f_country:'দেশ',
+  f_cat:'পণ্যের ধরন *',f_qty:'পরিমাণ',f_notes:'চাহিদা / নোট',
+  opt1:'জেনুইন লেদার ব্যাগ',opt2:'লেদার স্নিকার',opt3:'লেদার ফুটওয়্যার',opt4:'আনুষঙ্গিক ও ওয়ালেট',opt5:'OEM / প্রাইভেট লেবেল',
+  f_submit:'কোটেশন রিকোয়েস্ট পাঠান',
+  msg_sending:'পাঠানো হচ্ছে…',msg_ok:'পেয়েছি। ২৪ ঘণ্টায় উত্তর দেব।',msg_err:'পাঠানো যায়নি — buyers@arutemika.com এ মেইল করুন।',msg_inv:'নাম ও সঠিক ইমেইল আবশ্যক।',
+  cc_h:'কারখানার তথ্য',cc_co:'কোম্পানি',cc_est:'প্রতিষ্ঠা',cc_loc:'অবস্থান',cc_type:'ক্যাটাগরি',cc_type_v:'লেদার পণ্য + ফুটওয়্যার',
+  cc_moq:'সর্বনিম্ন অর্ডার',cc_pay:'পেমেন্ট',cc_email:'ইমেইল',cc_resp:'উত্তরের সময়',cc_resp_v:'২৪ ঘণ্টার মধ্যে',
+  ft_tag:'জেনুইন লেদার পণ্য রপ্তানিকারক · প্রতিষ্ঠা ১৯৯৮'
+},
+ja:{
+  logo_sub:'日本向け本革製品輸出業者 · 1998年創業',
+  nav_about:'会社概要',nav_products:'製品',nav_japan:'日本デスク',nav_portal:'バイヤーポータル',nav_rfq:'お見積り',
+  hero_eyebrow:'アルテミカ · 1998年創業 · バングラデシュ・ダッカ',
+  s1_h1:'本革<br><em>スニーカー</em>',s1_lead:'ダッカで製造するプレミアム本革スニーカー。1998年より日本へ輸出。立体3Dインソール・手縫いの細部。',
+  s2_h1:'本革<br><em>バッグ</em>',s2_lead:'フルグレインレザーのトート・ショルダーバッグ・小物類 — ダッカ工場より直送。最小ロット50点から承ります。',
+  s3_h1:'28年の<br><em>日本輸出実績</em>',s3_lead:'バングラデシュの革製品輸出にファミリーの歴史。現役の日本バイヤー2社、リアルタイム生産ポータル、ブラックボックスなし。',
+  s4_h1:'匠の技<br><em>クラフツマンシップ</em>',s4_lead:'手縫いの細部、抗菌インソール、驚きの屈曲性。日本の品質基準のために作られています。',
+  cta_rfq:'お見積り依頼',cta_portal:'バイヤーポータル',cta_products:'製品を見る',cta_about:'会社概要',cta_japan:'日本デスク',
+  st1:'創業年',st2:'年の日本輸出実績',st3:'現役日本バイヤー',st4:'お見積り回答',
+  ab_eyebrow:'会社概要',ab_h2:'1998年から続く日本との歩み',
+  ab_lead:'アルテミカはひとつの確信から生まれました：バングラデシュの職人技は日本の品質基準に応えられる。28年の一貫した日本輸出がその証しです。',
+  tl1_h:'創業 — 日本市場フォーカス',tl1_p:'日本を主要市場に据えた本革製品輸出業者として創業。',
+  tl2_h:'JETROプログラム参加',tl2_p:'JETROの貿易プログラムと日本の皮革見本市に参加し、市場知識とバイヤーとの関係を深化。',
+  tl3_h:'製品ライン拡充',tl3_p:'本革スニーカーをラインナップに追加。日本仕様の構造、3Dインソール、抗菌ライニング。',
+  tl4_h:'Nexusポータル開始',tl4_p:'バイヤー向けリアルタイム生産透明化ポータル — 工場フロアから写真・動画・QCレポートを直送。',
+  spec_title:'会社概要 / COMPANY REGISTER',
+  sk1:'商号',sv1:'アルテミカ (Arutemika)',sk2:'創業',sv2:'1998年 — 本革製品',
+  sk3:'所在地',sv3:'バングラデシュ・ダッカ — 革製品・フットウェア生産拠点',
+  sk4:'事業内容',sv4:'本革バッグ · 本革スニーカー · フットウェア · 小物 · OEM',
+  sk5:'日本との取引',sv5:'1998年より継続輸出 · 現役日本バイヤー2社 · 照会先ご提示可能',
+  sk6:'透明性',sv6:'リアルタイムバイヤーポータル — 生産写真・QCレポート・書類',
+  sk7:'決済条件',sv7:'T/T · L/C · DP — 初回はご要望に応じて柔軟に対応',
+  pr_eyebrow:'製品ライン',pr_h2:'本革。すべての一点に。',
+  pr_lead:'バッグ、スニーカー、小物類 — すべて本革、すべてダッカの生産拠点で製造、すべて日本基準の品質管理のもとで。',
+  cap1:'レディースレザーハンドバッグ',cap2:'クラシックレザートート',cap3:'クロコエンボスショルダーバッグ',cap4:'エグゼクティブブリーフケース',cap5:'レザーカメラクロスボディ',
+  cap6:'フルコレクション',cap7:'トートシリーズ',cap8:'コンパクトバックパック',cap9:'コンバーチブルパック',cap10:'ヘリテージレザーセット',
+  cap11:'アーバンショッパー',cap12:'マスタードシティトート',cap13:'原革のクラフツマンシップ',
+  jp_eyebrow:'04 / 日本のバイヤー様へ',jp_h2:'日本デスク',
+  jp_left_h:'工場への直接窓口、日本語で',
+  jp_left_p1:'当社の日本デスクは1998年以来、日本のバイヤー様に継続してサービスを提供しています。日本の品質基準、梱包慣習、そして長期的な関係の大切さを深く理解しています。',
+  jp_left_p2:'日本語でのご連絡を歓迎いたします。すべての生産過程はバイヤーポータルでリアルタイムにご確認いただけます。',
+  jp_pt1:'日本語対応可 — 日本語でのご連絡歓迎',
+  jp_pt2:'1998年より現役の日本バイヤー様 — 照会先ご提示可能',
+  jp_pt3:'小ロットの初回注文を歓迎 — 御社のペースで拡大',
+  jp_pt4:'リアルタイム生産ポータル — 写真・動画・QCをライブで',
+  jp_pt5:'2007年よりJETROプログラムに参加',
+  jp_pt6:'日本仕様の品質：手縫い・抗菌・精密なフィニッシュ',
+  po_eyebrow:'バイヤーポータル',po_h2:'ライブ生産ポータル',
+  po_lead:'すべての注文を完全に可視化。ヒロンが工場フロアから生産写真をアップロード — 東京のバイヤー様がリアルタイムでご確認。',
+  po_badge:'● ライブポータル — バイヤー専用',po_box_h:'あなたの生産ライン、ライブで。',
+  po_box_p:'バイヤーコードを入力して、ご注文のリアルタイム写真・QCレポート・出荷書類をご確認ください。',
+  po_powered:'Nexus Drive Syncで稼働中',
+  pf1_h:'生産写真',pf1_p:'注文の進行に合わせて毎日工場写真をアップロード。',
+  pf2_h:'ライブ動画',pf2_p:'裁断・縫製・仕上げの短いクリップ — ヒロンより直接。',
+  pf3_h:'QCレポート',pf3_p:'工程内および最終検品の結果を仕様書ごとにご報告。',
+  pf4_h:'書類',pf4_p:'インボイス・パッキングリスト・輸出書類 — 注文完了時にご用意。',
+  po_label:'バイヤーコード',po_enter:'ポータルにアクセス',po_demo:'▶ デモを見る',
+  po_live:'ライブフィード',po_close:'閉じる ✕',
+  pod_order:'注文ID',pod_qty:'数量',pod_eta:'出荷予定日',pod_status:'生産状況',
+  pod_stage_title:'生産ステージ',
+  stg1:'RFQ\n確認済',stg2:'サンプル\n承認済',stg3:'量産\n開始',stg4:'検品\n進行中',stg5:'出荷\n準備完了',
+  ptab1:'生産写真',ptab2:'QCレポート',ptab3:'書類',
+  pf_cutting:'裁断 — レザーパネル',pf_2h:'2時間前',pf_material:'原革検査',pf_5h:'5時間前',
+  pf_assembly:'組立ライン',pf_1d:'1日前',pf_stitch:'縁縫い',pf_color:'色・テクスチャー確認',
+  pf_2d:'2日前',pf_final:'サンプル最終確認',pf_3d:'3日前',
+  qc1_h:'素材・革の品質',qc2_h:'裁断精度',qc3_h:'縫製・仕上げ',qc4_h:'最終検品',
+  doc1:'注文書 — ORD-2026-047',doc2:'生産スケジュール',doc3:'サンプル承認書',
+  doc4:'コマーシャルインボイス',doc5:'パッキングリスト・B/L',doc_open:'開く →',doc_req:'要リクエスト',
+  rf_eyebrow:'お見積り依頼',rf_h2:'お見積りはこちら',
+  rf_lead:'お問い合わせは秘密厳守。条件を満たすバイヤー様には無料サンプルをご提供。24時間以内にご返信。',
+  f_name:'お名前 *',f_company:'会社名',f_email:'メールアドレス *',f_country:'国',
+  f_cat:'製品カテゴリー *',f_qty:'数量',f_notes:'ご要望・備考',
+  opt1:'本革バッグ',opt2:'本革スニーカー',opt3:'レザーフットウェア',opt4:'小物・財布',opt5:'OEM／プライベートブランド',
+  f_submit:'お見積りを依頼する',
+  msg_sending:'送信中…',msg_ok:'受け付けました。24時間以内にご返信いたします。',msg_err:'送信に失敗しました。buyers@arutemika.com までメールください。',msg_inv:'お名前と正しいメールアドレスをご入力ください。',
+  cc_h:'工場情報',cc_co:'会社名',cc_est:'創業',cc_loc:'所在地',cc_type:'種別',cc_type_v:'革製品＋フットウェア',
+  cc_moq:'最小ロット',cc_pay:'決済',cc_email:'メール',cc_resp:'ご返信',cc_resp_v:'24時間以内',
+  ft_tag:'日本向け本革製品輸出業者 · 1998年創業'
+}
+};
+
+/* ── i18n ── */
+function setLang(l){
+  const d=I18N[l]||I18N.en;
+  document.body.dataset.lang=l;
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(d[k]!==undefined)el.textContent=d[k]});
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(d[k]!==undefined)el.innerHTML=d[k]});
+  document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.toggle('active',b.dataset.setlang===l));
+  try{localStorage.setItem('ar_lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang-bar button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.setlang)));
+
+/* ── SLIDER ── */
+let cur=0,tot=4,timer;
+const slidesEl=document.getElementById('slides');
+const dotsEl=document.getElementById('dots');
+for(let i=0;i<tot;i++){const d=document.createElement('button');d.className='dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d)}
+function goTo(n){cur=(n+tot)%tot;slidesEl.style.transform=`translateX(-${cur*100}%)`;document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));clearInterval(timer);timer=setInterval(()=>goTo(cur+1),5000)}
+function slide(d){goTo(cur+d)}
+goTo(0);
+
+/* ── PORTAL ── */
+function openPortal(mode){
+  const lang=document.body.dataset.lang||'en';
+  const d=I18N[lang]||I18N.en;
+  const code=mode==='demo'?'DEMO MODE':document.getElementById('buyerCode').value.trim().toUpperCase();
+  if(!code){document.getElementById('buyerCode').focus();return}
+  document.getElementById('poTitle').textContent=mode==='demo'?'TanakaCorp — Demo':code;
+  const eta=new Date(Date.now()+14*86400000);
+  document.getElementById('poDate').textContent=eta.toLocaleDateString('ja-JP',{month:'numeric',day:'numeric'});
+  document.getElementById('portalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  setLang(lang);
+}
+function closePortal(){
+  document.getElementById('portalOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function switchTab(name,el){
+  document.querySelectorAll('.tab-panel').forEach(p=>{p.classList.remove('active')});
+  document.querySelectorAll('.po-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  el.classList.add('active');
+}
+
+/* ── LIGHTBOX ── */
+function openLB(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open')}
+function closeLB(){document.getElementById('lb').classList.remove('open')}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb')closeLB()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLB();closePortal()}});
+
+/* ── RFQ ── */
+document.getElementById('rfqForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const lang=document.body.dataset.lang||'en';
+  const d=I18N[lang]||I18N.en;
+  const fd=new FormData(e.target);
+  if(fd.get('website'))return;
+  const name=(fd.get('name')||'').trim(),email=(fd.get('email')||'').trim();
+  const st=document.getElementById('formStatus');
+  if(!name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){st.textContent=d.msg_inv;st.className='form-status status-err';return}
+  const btn=e.target.querySelector('.submit');
+  btn.disabled=true;st.textContent=d.msg_sending;st.className='form-status';
+  try{
+    await fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify({type:'RFQ',source:'arutemika-v5',lang,ts:new Date().toISOString(),name,email,company:fd.get('company')||'',country:fd.get('country')||'',category:fd.get('category')||'',quantity:fd.get('quantity')||'',notes:fd.get('notes')||''})});
+    st.textContent=d.msg_ok;st.className='form-status status-ok';e.target.reset();
+  }catch(err){st.textContent=d.msg_err;st.className='form-status status-err';}
+  finally{btn.disabled=false}
+});
+
+/* ── INIT ── */
+let initLang='en';
+try{initLang=localStorage.getItem('ar_lang')||'en'}catch(e){}
+const nav=(navigator.language||'').slice(0,2);
+if(!localStorage.getItem('ar_lang')){if(nav==='ja')initLang='ja';else if(nav==='bn')initLang='bn'}
+setLang(initLang);
+</script>
+</body>
+</html>
